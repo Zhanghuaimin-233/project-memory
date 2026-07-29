@@ -228,9 +228,11 @@ codex plugin add project-memory@personal
 
 ## 在其他 Agent 工具中复用
 
-五个 `SKILL.md` 和共享模板都是与模型无关的 Markdown 工作流，不依赖 Codex 命令、OpenAI API 或外部插件；`.codex-plugin/plugin.json` 与 `agents/openai.yaml` 只是 Codex 的发现和界面适配层。
+五个 `SKILL.md` 和各自内置的模板都是与模型无关的 Markdown 工作流，不依赖 Codex 命令、OpenAI API 或外部插件；`.codex-plugin/plugin.json` 与 `agents/openai.yaml` 只是 Codex 的发现和界面适配层。
 
-其他 Agent 可以直接复用核心治理逻辑。建议克隆完整仓库以保留 `assets/templates/`，再按目标工具自己的 Skill 目录、发现规则或显式读取方式加载；不同工具需要适配的只是安装与触发方式。
+从 [Releases](https://github.com/Zhanghuaimin-233/project-memory/releases) 下载 `project-memory-skills-v0.2.0.zip`，即可获得五个可独立安装的 `.skill` 文件。每个包都包含自身依赖的模板，不需要保留本仓库目录结构，也不需要另外安装 Project Memory 插件。
+
+支持 `.skill` 导入的工具可以直接安装；其他支持 Agent Skills 的工具可以将其作为 ZIP 解压，再放入目标工具的 Skill 目录。完全没有 Skill 发现机制的 Agent 也可以显式读取其中的 `SKILL.md` 执行。需要适配的只有安装与触发方式，工作流本身保持一致。
 
 ## 使用
 
@@ -267,14 +269,18 @@ $closeout-project-task 结算这个已完成任务并沉淀项目经验
 .codex-plugin/plugin.json
 skills/
   bootstrap-project-memory/
+    SKILL.md
+    templates/
   adopt-project-memory/
+    SKILL.md
+    templates/
   checkpoint-project-task/
+    SKILL.md
+    templates/
   resume-project-task/
+    SKILL.md
   closeout-project-task/
-assets/templates/
-  docs-readme.md
-  agents-document-routing.md
-  task-state.md
+    SKILL.md
 ```
 
 ## 许可证
