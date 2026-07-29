@@ -1,0 +1,4 @@
+interface:
+  display_name: "保存任务检查点"
+  short_description: "核对真实工作树并为未完成的长期任务重写可恢复的跨会话状态快照"
+  default_prompt: "使用 $checkpoint-project-task 为当前未完成任务保存一个可恢复的会话检查点。"

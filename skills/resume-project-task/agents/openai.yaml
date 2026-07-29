@@ -1,0 +1,4 @@
+interface:
+  display_name: "恢复长期任务"
+  short_description: "从任务状态、代码和真实工作树校准并继续上次未完成的长期任务"
+  default_prompt: "使用 $resume-project-task 核对现场并恢复上次未完成的长期任务。"
