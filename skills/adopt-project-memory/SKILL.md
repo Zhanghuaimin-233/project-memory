@@ -87,11 +87,11 @@ unknown
 
 若项目已有企划、实施手册、路线图或 architecture 各自承担明确职责，复用它们；不要为了符合模板再创建 `PROJECT.md`。
 
-执行迁移前完整读取本 Skill 自带的模板，并按项目现场删减：
+参考：
 
-- `./templates/docs-readme.md`
-- `./templates/agents-document-routing.md`
-- `./templates/task-state.md`
+- `../../assets/templates/docs-readme.md`
+- `../../assets/templates/agents-document-routing.md`
+- `../../assets/templates/task-state.md`
 
 ## 4. 按顺序完成迁移
 

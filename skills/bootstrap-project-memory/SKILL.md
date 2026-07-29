@@ -63,10 +63,10 @@ archive/
 
 ## 3. 写入持续文档合同
 
-写入前完整读取本 Skill 自带的模板：
+参考插件模板：
 
-- `./templates/docs-readme.md`
-- `./templates/agents-document-routing.md`
+- `../../assets/templates/docs-readme.md`
+- `../../assets/templates/agents-document-routing.md`
 
 模板是候选骨架，不是必须逐字复制。根据项目已有名称和目录删减，不创建不存在的类别。
 

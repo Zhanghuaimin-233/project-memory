@@ -51,7 +51,7 @@ STATE-new.md
 
 ## 3. 重写而非追加
 
-写入前完整读取 `./templates/task-state.md`，并根据项目删减。
+参考 `../../assets/templates/task-state.md`，根据项目删减。
 
 State 至少包括：
 

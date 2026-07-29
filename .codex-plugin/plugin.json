@@ -1,6 +1,6 @@
 {
   "name": "project-memory",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "\u4e3a\u4e2a\u4eba\u9879\u76ee\u5efa\u7acb\u53ef\u6301\u7eed\u7684\u6587\u6863\u5165\u53e3\uff0c\u7ef4\u62a4\u8de8\u4f1a\u8bdd\u4efb\u52a1\u8fde\u7eed\u6027\uff0c\u5e76\u5728\u5b8c\u6210\u6001\u6c89\u6dc0\u9879\u76ee\u77e5\u8bc6\u3002",
   "author": {
     "name": "Kagamihara Nadeshiko",
