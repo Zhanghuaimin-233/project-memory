@@ -69,7 +69,8 @@ current-truth
 specification
 plan
 task-state
-report
+  backlog
+  report
 knowledge
 history
 unknown
@@ -85,15 +86,16 @@ unknown
 2. 建立或修正 `docs/README.md`、`docs/INDEX.md` 或项目等价索引。
 3. 在 AGENTS 中建立短文档路由和新文档创建规则。
 4. 为当前未完成长期任务建立 `STATE.md`。
-5. 明确 Plans、Reports 和 Archive 默认不代表当前实现，并把 Spec 的双门槛晋升规则写入项目文档合同。
+5. 明确 Plans、Backlog、Reports 和 Archive 默认不代表当前实现，并把日常事件路由、Report 检索信号、阶段/任务两级结算和 Spec 双门槛写入项目文档合同。
 
 若项目已有企划、实施手册、路线图或 architecture 各自承担明确职责，复用它们；不要为了符合模板再创建 `PROJECT.md`。
 
-执行迁移前完整读取本 Skill 自带的模板，并按项目现场删减：
+参考：
 
 - `./templates/docs-readme.md`
 - `./templates/agents-document-routing.md`
 - `./templates/task-state.md`
+- `./templates/backlog.md`（只有出现真实延期事项且没有 Issue 系统时使用）
 
 ## 4. 按顺序完成迁移
 

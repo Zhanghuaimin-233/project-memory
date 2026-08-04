@@ -1,0 +1,4 @@
+interface:
+  display_name: "路由项目记忆"
+  short_description: "轻量捕获并路由执行中的点子、小问题、延期事项与调查证据"
+  default_prompt: "使用 $route-project-memory 判断这条执行中发现应该进入 State、Backlog、Plan、Report、转交 closeout，还是无需创建文档。"
