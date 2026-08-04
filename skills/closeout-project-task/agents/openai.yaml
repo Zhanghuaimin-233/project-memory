@@ -1,4 +1,4 @@
 interface:
-  display_name: "结算项目任务"
-  short_description: "完成任务后同步当前事实、提炼项目知识并退出活跃状态"
-  default_prompt: "使用 $closeout-project-task 结算这个已完成任务，并同步事实、沉淀经验和处理任务材料。"
+  display_name: "结算项目阶段或任务"
+  short_description: "在可验收边界同步事实、成熟合同、项目知识与后续事项"
+  default_prompt: "使用 $closeout-project-task 判断并结算这个已完成阶段或任务，同步成熟结果并正确处理 State。"
