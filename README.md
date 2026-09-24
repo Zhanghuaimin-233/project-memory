@@ -11,13 +11,13 @@
 | [setup-project-memory](skills/setup-project-memory/SKILL.md) | 新项目缺必要说明，或旧项目入口、当前方案混乱 | 能找到并使用正确的信息 |
 | [checkpoint-project-task](skills/checkpoint-project-task/SKILL.md) | 暂停、换会话或换 Agent，现场有难以恢复的信息 | 下一位 Agent 能定位现场并正确继续 |
 | [resume-project-task](skills/resume-project-task/SKILL.md) | 接手或继续未完成任务 | 根据当前现场恢复正确下一步 |
-| [neat-freak](skills/neat-freak/SKILL.md) | 阶段或任务收尾，或同步受影响的文档 | 本次工作影响的信息不再误导后续行动 |
+| [closeout-project-task](skills/closeout-project-task/SKILL.md) | 阶段或任务收尾，或同步受影响的文档 | 本次工作影响的信息不再误导后续行动 |
 
 ```text
 $setup-project-memory 解决这个项目旧计划和当前入口的冲突
 $checkpoint-project-task 暂停前保存下一会话需要的现场
 $resume-project-task 继续上次未完成的任务
-$neat-freak 收尾这次改动，同步实际受影响的说明
+$closeout-project-task 收尾这次改动，同步实际受影响的说明
 ```
 
 没有必须依次调用的流程。每个 Skill 都允许零新增 Markdown；已有信息足够时，也允许零改动结束。不会为了“不写文档”另外生成一份判断报告。
@@ -77,10 +77,10 @@ codex plugin list
 
 - `bootstrap-project-memory` 和 `adopt-project-memory` 合并为 `setup-project-memory`。
 - `route-project-memory` 退出分发，日常记录直接在合适位置完成。
-- `closeout-project-task` 与洁癖的有效方法融合为包内 `neat-freak`，不串联外部收尾流程。
+- `closeout-project-task` 保留名称，吸收核对、去重与知识整理方法，作为包内独立收尾 Skill，不串联外部收尾流程。
 - `checkpoint-project-task` 和 `resume-project-task` 名称保留，行为改为最小保存和按需恢复。
 
-安装时移除本插件退役的入口，避免新旧规则同时加载。已有独立 neat-freak 的用户应选择一个来源或同步为相同实现，不必执行两轮收尾。既有项目无需批量迁移目录；下次确实涉及相应规则时，再修正旧的强制路由、必填栏目和退役 Skill 引用。项目或用户的明确约定优先。
+安装时移除本插件退役的入口，避免新旧规则同时加载。若曾安装包内 `neat-freak`，将其替换为 `closeout-project-task`。独立 `neat-freak` 由其自己的来源维护，本插件不覆盖它，也不要求调用它；任务收尾使用本插件入口，明确调用“洁癖”或 `/neat` 时使用独立 Skill。既有项目无需批量迁移目录；下次确实涉及相应规则时，再修正旧的强制路由、必填栏目和退役 Skill 引用。项目或用户的明确约定优先。
 
 ## 维护验证
 

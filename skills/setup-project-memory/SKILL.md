@@ -54,4 +54,4 @@ description: 为新项目补齐必要信息入口，或修复已有项目中难�
 - `../../assets/templates/agents-document-routing.md`：项目确需写下少量信息维护约定时。
 - `../../assets/templates/backlog.md`：已有值得暂存的后续事项、又没有合适 Issue/待办入口时。
 
-暂停交接、恢复工作、阶段或任务收尾分别可使用 `checkpoint-project-task`、`resume-project-task`、`neat-freak`；无需为了建立入口依次调用它们。
+暂停交接、恢复工作、阶段或任务收尾分别可使用 `checkpoint-project-task`、`resume-project-task`、`closeout-project-task`；无需为了建立入口依次调用它们。

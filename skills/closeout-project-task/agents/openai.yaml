@@ -1,0 +1,4 @@
+interface:
+  display_name: "项目任务收尾"
+  short_description: "按实际影响同步文档、去除陈旧重复内容，并正确结束阶段或任务"
+  default_prompt: "使用 $closeout-project-task 核对本次完成范围，只同步实际受影响的资料，并让任务入口保持准确。"
