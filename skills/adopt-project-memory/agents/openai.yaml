@@ -1,4 +1,0 @@
-interface:
-  display_name: "接管项目记忆"
-  short_description: "接管已有项目的杂乱文档并重新建立权威入口、分类与生命周期规则"
-  default_prompt: "使用 $adopt-project-memory 接管并完整梳理这个项目已有的文档体系；除非遇到明确停止条件，否则连续完成全部安全步骤。"
