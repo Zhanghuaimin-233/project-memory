@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "Project Memory",
     "shortDescription": "按需整理入口、保存现场、恢复任务和收尾。",
-    "longDescription": "帮助 Agent 用较少阅读正确接续工作。Plan 维护当前方案，STATE 只保存接续必需信息；允许零新增文档，融合洁癖核对与去重方法，不强制治理流程。",
+    "longDescription": "帮助 Agent 用较少阅读正确接续工作。Plan 维护当前方案，STATE 只保存接续必需信息；允许零新增文档，按实际影响核对与去重，不强制治理流程。",
     "developerName": "Kagamihara Nadeshiko",
     "category": "Productivity",
     "capabilities": [],

@@ -1,4 +1,0 @@
-interface:
-  display_name: "洁癖：同步事实与收尾"
-  short_description: "按实际影响同步文档、去除陈旧重复内容，并正确结束阶段或任务"
-  default_prompt: "使用 $neat-freak 核对本次完成范围，只同步实际受影响的资料，并让任务入口保持准确。"

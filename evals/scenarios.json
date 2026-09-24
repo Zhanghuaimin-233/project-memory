@@ -29,7 +29,7 @@
     {
       "id": 4,
       "name": "phase-closeout",
-      "skill": "neat-freak",
+      "skill": "closeout-project-task",
       "baseline_skill": "closeout-project-task",
       "prompt": "第一阶段离线导入已验收，收尾这个阶段并同步使用说明。第二阶段仍待真实服务验证，保持任务活跃。",
       "expectations": ["修正过期使用说明", "保持唯一活跃任务入口和剩余验收", "STATE 不再积累已解决阻塞", "不制造 Knowledge、Report 或清理工作区"]
@@ -45,7 +45,7 @@
     {
       "id": 6,
       "name": "no-document-closeout",
-      "skill": "neat-freak",
+      "skill": "closeout-project-task",
       "baseline_skill": "closeout-project-task",
       "prompt": "这次只修复内部函数对空列表的处理，测试已通过，公开行为和使用方式未改变，帮我收尾。",
       "expectations": ["没有受影响说明时零文档改动", "不强行沉淀经验或创建收尾报告", "不把本地通过说成部署或上线"]
