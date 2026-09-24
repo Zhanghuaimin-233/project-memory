@@ -1,0 +1,4 @@
+interface:
+  display_name: "建立项目入口"
+  short_description: "补齐必要信息或修复混乱入口，复用已有文档并允许零新增文件"
+  default_prompt: "使用 $setup-project-memory 检查这个项目是否有妨碍接手的信息缺口，只修复必要入口。"

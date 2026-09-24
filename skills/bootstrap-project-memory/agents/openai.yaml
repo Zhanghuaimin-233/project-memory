@@ -1,4 +1,0 @@
-interface:
-  display_name: "初始化项目记忆"
-  short_description: "为全新个人项目建立最小文档入口、路由规则与持续维护合同"
-  default_prompt: "使用 $bootstrap-project-memory 为这个新项目建立最小且可持续维护的文档体系。"

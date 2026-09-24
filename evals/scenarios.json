@@ -1,0 +1,54 @@
+{
+  "skill_name": "project-memory",
+  "purpose": "行为回归场景；比较正确接续和必要写入，不把文档变短等同于实际 token 节省。",
+  "evals": [
+    {
+      "id": 1,
+      "name": "healthy-entry",
+      "skill": "setup-project-memory",
+      "baseline_skill": "bootstrap-project-memory",
+      "prompt": "看看这个小项目是否缺少接手所需的说明，只补实际缺失的信息。",
+      "expectations": ["已有入口足够时零文档改动", "不强建 AGENTS、文档合同或 STATE"]
+    },
+    {
+      "id": 2,
+      "name": "checkpoint-growth",
+      "skill": "checkpoint-project-task",
+      "baseline_skill": "checkpoint-project-task",
+      "prompt": "任务暂停，保存下次继续所需的现场。用户已批准保持离线验收不变，实施步骤由逐条请求改为批处理，请把当前计划对应段落改清楚。",
+      "expectations": ["已完成历史退出 STATE，未完成验收仍可找到", "结果未知的付费请求不能重试这一约束仍在", "计划吸收已批准变化，不靠 STATE 补丁解释", "不另建历史溢出文档或第二份 STATE"]
+    },
+    {
+      "id": 3,
+      "name": "resume-selective",
+      "skill": "resume-project-task",
+      "baseline_skill": "resume-project-task",
+      "prompt": "只读接手当前任务，告诉我下一步；不要修改文件或调用外部服务。",
+      "expectations": ["不展开与当前问题无关的全部历史报告", "核对当前现场且保留外部结果未知的限制", "复用仍适用的旧验证，不因未重跑就宣布失效", "只读请求零写入"]
+    },
+    {
+      "id": 4,
+      "name": "phase-closeout",
+      "skill": "neat-freak",
+      "baseline_skill": "closeout-project-task",
+      "prompt": "第一阶段离线导入已验收，收尾这个阶段并同步使用说明。第二阶段仍待真实服务验证，保持任务活跃。",
+      "expectations": ["修正过期使用说明", "保持唯一活跃任务入口和剩余验收", "STATE 不再积累已解决阻塞", "不制造 Knowledge、Report 或清理工作区"]
+    },
+    {
+      "id": 5,
+      "name": "replace-plan",
+      "skill": "setup-project-memory",
+      "baseline_skill": "adopt-project-memory",
+      "prompt": "现有计划的路线已经不适用。保留旧计划正文，新建以批处理为路线的替代计划，原有离线和真实服务验收都保留，让当前入口清楚。",
+      "expectations": ["旧正文保留并标明被替代、链接新计划", "新计划自包含剩余验收且标明替代来源", "STATE 与索引只有一个当前 Plan", "不为替代计划另建治理 STATE 或全面迁移"]
+    },
+    {
+      "id": 6,
+      "name": "no-document-closeout",
+      "skill": "neat-freak",
+      "baseline_skill": "closeout-project-task",
+      "prompt": "这次只修复内部函数对空列表的处理，测试已通过，公开行为和使用方式未改变，帮我收尾。",
+      "expectations": ["没有受影响说明时零文档改动", "不强行沉淀经验或创建收尾报告", "不把本地通过说成部署或上线"]
+    }
+  ]
+}
