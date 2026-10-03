@@ -1,0 +1,5 @@
+{
+  "title": "导入流程",
+  "steps": ["读取记录", "每条请求网关", "保存任务结果"],
+  "source": "src/importer.py:import_records"
+}

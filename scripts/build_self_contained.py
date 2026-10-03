@@ -5,7 +5,7 @@ import re
 import shutil
 from pathlib import Path
 
-TEMPLATE_REF = re.compile(r"\.\./\.\./assets/templates/([a-z0-9-]+\.md)")
+ASSET_REF = re.compile(r"\.\./\.\./assets/((?:templates|references)/[a-z0-9-]+\.md)")
 
 
 def build(source: Path, output: Path) -> None:
@@ -24,24 +24,24 @@ def build(source: Path, output: Path) -> None:
     plans = []
     for skill in skills:
         body = skill.read_text(encoding="utf-8")
-        refs = set(TEMPLATE_REF.findall(body))
-        templates = [source / "assets" / "templates" / name for name in sorted(refs)]
-        for template in templates:
-            if not template.is_file():
-                raise FileNotFoundError(template)
-        rewritten = TEMPLATE_REF.sub(r"./templates/\1", body)
+        refs = sorted(set(ASSET_REF.findall(body)))
+        resources = [(ref, source / "assets" / ref) for ref in refs]
+        for _, resource in resources:
+            if not resource.is_file():
+                raise FileNotFoundError(resource)
+        rewritten = ASSET_REF.sub(r"./\1", body)
         if "../../assets/" in rewritten:
             raise ValueError(f"Unsupported external asset reference: {skill}")
-        plans.append((skill, rewritten, templates))
+        plans.append((skill, rewritten, resources))
     output.mkdir(parents=True)
-    for skill, rewritten, templates in plans:
+    for skill, rewritten, resources in plans:
         destination = output / skill.parent.name
         shutil.copytree(skill.parent, destination)
         (destination / "SKILL.md").write_text(rewritten, encoding="utf-8", newline="\n")
-        for template in templates:
-            target = destination / "templates" / template.name
+        for ref, resource in resources:
+            target = destination / ref
             target.parent.mkdir(exist_ok=True)
-            shutil.copy2(template, target)
+            shutil.copy2(resource, target)
     print(f"Built {len(plans)} self-contained skills: {output}")
 
 

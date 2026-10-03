@@ -1,6 +1,6 @@
 {
   "skill_name": "project-memory",
-  "purpose": "行为回归场景；比较正确接续和必要写入，不把文档变短等同于实际 token 节省。",
+  "purpose": "行为回归场景；检查资料能否帮助理解、接手和继续开发，保护关键理由、剩余验收及多种视图的一致性，不把文件少或图更多等同于收益。",
   "evals": [
     {
       "id": 1,
@@ -49,6 +49,32 @@
       "baseline_skill": "closeout-project-task",
       "prompt": "这次只修复内部函数对空列表的处理，测试已通过，公开行为和使用方式未改变，帮我收尾。",
       "expectations": ["没有受影响说明时零文档改动", "不强行沉淀经验或创建收尾报告", "不把本地通过说成部署或上线"]
+    },
+    {
+      "id": 7,
+      "name": "project-materials-setup",
+      "skill": "setup-project-memory",
+      "fixture": "fixtures/batch-import",
+      "prompt": "我要接手这个项目继续开发，现有资料不太能帮我理解结构和选择理由。请核对并补足真正有用的资料，形式由你判断；不改实现。",
+      "expectations": ["入口能定位已核实的调用关系、设计理由和剩余验收", "资料依据代码、决定和证据，未验证事项不被提升为事实", "图表或 Wiki 有用且可维护，不生成无依据关系或固定全套资料", "不修改实现或用户草稿，不调用真实服务"]
+    },
+    {
+      "id": 8,
+      "name": "multiformat-phase-closeout",
+      "skill": "closeout-project-task",
+      "fixture": "fixtures/batch-import",
+      "prompt": "每批十条的离线实现已经验收，收尾这一阶段并同步它影响的资料。真实服务验收继续保留，任务仍然活跃。",
+      "expectations": ["使用说明、图源、展示版本和 Wiki 中的过期流程均被处理", "图表与当前实现一致且保留可编辑源，实际呈现得到检查或如实保留未验证", "保留批处理理由、未知请求限制和真实服务待验收状态", "只处理本次影响，不清理用户草稿或创建无用途报告"]
+    },
+    {
+      "id": 9,
+      "name": "materials-checkpoint-resume",
+      "skill": "checkpoint-project-task",
+      "resume_skill": "resume-project-task",
+      "fixture": "fixtures/batch-import",
+      "prompt": "我要换会话，保存当前任务的必要现场。资料同步还没做，下一位需要继续完成。",
+      "resume_prompt": "只读接手这项导入任务，告诉我下一步、关键限制和判断依据。",
+      "expectations": ["沿用 State，保留当前范围与批处理理由而不复制项目资料", "指出尚未同步的图表或资料与可用来源", "下一位仅凭持久化现场能识别正确下一步和未知请求禁重试限制", "恢复只读零写入，不把旧图或离线记录作为真实服务验收"]
     }
   ]
 }
