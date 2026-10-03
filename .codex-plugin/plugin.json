@@ -1,7 +1,7 @@
 {
   "name": "project-memory",
-  "version": "0.2.0",
-  "description": "用四个按需 Skill 建立或修复项目入口，保存和恢复必要现场，并收尾实际受影响的信息。",
+  "version": "0.3.0",
+  "description": "用四个按需 Skill 维护准确、易查、易理解、易更新的项目资料，支持说明、图表与知识地图，帮助接手和继续开发。",
   "author": {
     "name": "Kagamihara Nadeshiko",
     "url": "https://github.com/Zhanghuaimin-233"
@@ -19,12 +19,12 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Project Memory",
-    "shortDescription": "按需整理入口、保存现场、恢复任务和收尾。",
-    "longDescription": "帮助 Agent 用较少阅读正确接续工作。Plan 维护当前方案，STATE 只保存接续必需信息；允许零新增文档，按实际影响核对与去重，不强制治理流程。",
+    "shortDescription": "维护可接手的项目资料，按需保存、恢复和收尾。",
+    "longDescription": "按用途选择说明、图表、Wiki 或知识地图，维护来源、关键理由与当前状态。沿用现有资料，按实际变化更新相关视图，让人和 Agent 以较小成本正确接手与继续开发；不强制文档结构或后台服务。",
     "developerName": "Kagamihara Nadeshiko",
     "category": "Productivity",
     "capabilities": [],
     "websiteURL": "https://github.com/Zhanghuaimin-233/project-memory",
-    "defaultPrompt": "帮助我按实际需要整理项目入口、保存或恢复任务现场，或收尾受影响的信息。"
+    "defaultPrompt": "帮助我按实际目的建立或维护项目资料、保存或恢复任务现场，或同步本次工作影响的说明与图表。"
   }
 }
